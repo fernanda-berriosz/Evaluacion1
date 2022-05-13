@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <!-- CSS de Bootstrap-->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous" />
+
+        <style>
+            @import url("https://fonts.googleapis.com/css2?family=Roboto+Flex:opsz@8..144&display=swap");
+
+            :root {
+                --bs-body-font-family: "Roboto Flex", sans-serif;
+                --bs-body-color: #eef;
+            }
+            body {
+                background-color: #000336;
+            }
+        </style>
+        <title>Pre-entrega, Introducción al Desarrollo Front End con HTML, CSS y JavaScript</title>
+    </head>
+    <body>
+        <header>
+            <div class="container">
+                <div class="row pt-5">
+                    <div class="col-sm-10 col-md-8 col-lg-6 mx-auto">
+                        <h1 class="display-4 text-center py-2">Rick & Morty</h1>
+                        <img src="https://media.vandalsports.com/i/640x360/3-2022/20223292845_1.jpg"
+                        class="mb-5">
+                        <p class="lead">
+                            Es una serie de televisión estadounidense de animación para adultos creada por Justin Roiland y Dan Harmon en 2013 para Adult Swim. La serie sigue las desventuras de un científico, Rick, y su fácilmente
+                            influenciable nieto, Morty, quienes pasan el tiempo entre la vida doméstica y los viajes espaciales, temporales e intergalácticos.
+                        </p>
+                        <img src="https://www.latercera.com/resizer/BaNHXVW24tLkG2DTrioBtuWyCxA=/900x600/smart/arc-anglerfish-arc2-prod-copesa.s3.amazonaws.com/public/WPNKFC3FPBBJ3NJK5PINB2XPUM.png"
+                        width="400px"
+                        class="mb-5">
+                        <p>Richard «Rick» Sánchez morty Soto2​ es uno de los dos protagonistas homónimos de la serie de televisión animada, Es un científico loco sociopático que parece conocer todo en el universo y por lo tanto encuentra la vida una experiencia traumática y sin sentido. Sin embargo, a pesar de asumir que es la persona más inteligente del universo, ha habido momentos en los que se ha equivocado.</p>
+                      <img src="https://static.wikia.nocookie.net/wiki-de-rick-morty/images/4/41/Morty_Smith.jpg/revision/latest?cb=20170322201303&path-prefix=es"
+
+                       height="266px"
+                       style="object-fit:contain"
+                       class="mb-5">
+                       <p>Su nombre real es Mortimer Smith apodado como "Morty" y es uno de los protagonistas principales de la serie animada Rick and Morty. Tiene constantes aventuras con su abuelo Rick Sánchez para ayudarlo siendo la mayoría de las ocasiones en contra de su voluntad y saliendo lastimado en casi todas ellas.</p>
+                        <p>
+                            Aunque estos personajes son los protagonistas de la serie, existen otros que igual tienen relevancia a lo largo de las temporadas, de esta forma podemos destacar los veinte personajes más importantes a lo largo de las
+                            cinco temporadas que tiene esta serie animada.
+                        </p>
+                        <p>De los <a href="https://github.com/fernanda-berriosz/datos/blob/main/datos.csv" target="_blank" class="link-light">registros de los 20 personajes relevantes de la serie</a>, podemos obtener algunos datos:</p>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <main class="container">
+            <div class="accordion mx-md-5 my-5 rounded-0" id="accordionExample">
+                <!--cantidad de personajes femeninos y masculinos-->
+                <div class="accordion-item rounded-0">
+                    <h2 class="accordion-header bg-dark" id="headingOne">
+                        <button class="accordion-button rounded-0" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">Cantidad de personajes femeninos y masculinos</button>
+                    </h2>
+                    <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+                        <div class="accordion-body text-black-50">
+                            <p>Aqui se muestran las cantidades correspondientes a personajes femeninos, masculinos y desconocidos.</p>
+                            <canvas id="gender" width="100" height="100" class="m-5"></canvas>
+                        </div>
+                    </div>
+                </div>
+                <!--cantidad de personajes vivos y muertos-->
+                <div class="accordion-item rounded-0">
+                    <h2 class="accordion-header" id="headingTwo">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">Cantidad de personajes vivos y muertos</button>
+                    </h2>
+                    <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
+                        <div class="accordion-body text-black-50">
+                            <p>En este gráfico se muestran la cantidad de personajes que han muerto a lo largo de la serie, al igual de los que aún permanecen vivos.</p>
+                            <canvas id="status" width="100" height="100" class="m-5"></canvas>
+                        </div>
+                    </div>
+                </div>
+                <!--Especie correspondiente a cada personaje-->
+                <div class="accordion-item rounded-0">
+                    <h2 class="accordion-header" id="headingThree">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">Especie correspondiente a cada personaje</button>
+                    </h2>
+                    <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
+                        <div class="accordion-body text-black-50">
+                            <p>Aquí se muestran las dos especies que se ven en la serie.</p>
+                            <canvas id="species" width="100" height="100" class="m-5"></canvas>
+                        </div>
+                    </div>
+                </div>
+                <!--Lugar de origen de los personajes-->
+                <div class="accordion-item rounded-0">
+                    <h2 class="accordion-header" id="headingFour">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">Lugar de origen de los personajes</button>
+                    </h2>
+                    <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour" data-bs-parent="#accordionExample">
+                        <div class="accordion-body text-black-50">
+                            <p>Aqui se muestran los lugares de origen de los personajes que están en la serie.</p>
+                            <canvas id="originName" width="100" height="100" class="m-5"></canvas>
+                        </div>
+                    </div>
+                </div>
+                <div class="accordion-item rounded-0">
+                    <h2 class="accordion-header" id="headingFive">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">Lugar de locación de los personajes</button>
+                    </h2>
+                    <div id="collapseFive" class="accordion-collapse collapse" aria-labelledby="headingFive" data-bs-parent="#accordionExample">
+                        <div class="accordion-body text-black-50">
+                            <p>Aqui se muestran los lugares donde residen los personajes en la serie.</p>
+                            <canvas id="locationName" width="100" height="100" class="m-5"></canvas>
+                        </div>
+                    </div>
+                </div>
+                <!--Fin-->
+            </div>
+            <div class="row">
+                <div class="col-sm-10 col-md-8 col-lg-6 mx-auto">
+                    <p>Estos son los cinco gráficos que muestran para especificar las características de los veinte personajes más relevantes en la serie, donde se indica su locacion, su lugar de origen, si está vivo o muerto,etc. </p>
+                </div>
+            </div>
+        </main>
+
+        <aside>
+            <div class="container">
+                <div class="row py-5">
+                    <div class="col-sm-10 col-md-8 col-lg-6 mx-auto small text-center">
+                        <p>Fuente: <a href="https://es.wikipedia.org/wiki/Rick_y_Morty">Rick y Morty</a></p>
+                    </div>
+                </div>
+            </div>
+        </aside>
+
+        <footer>
+            <div class="container">
+                <div class="row">
+                    <div class="col"><p class="text-muted mt-5 text-center small">Bootstrap v5.1 y Charts.js</p></div>
+                </div>
+            </div>
+        </footer>
+
+        <!-- Biblioteca de Bootstrap -->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+        <!-- Biblioteca Chart.js -->
+        <script
+            src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.7.1/chart.min.js"
+            integrity="sha512-QSkVNOCYLtj73J4hbmVoOV6KVZuMluZlioC+trLpewV8qMjsWqlIQvkn1KGX2StWvPMdWGBqim1xlC8krl1EKQ=="
+            crossorigin="anonymous"
+            referrerpolicy="no-referrer"
+        ></script>
+        <script>
+                        async function todo() {
+                            //el fetch
+                            const consulta = await fetch("https://raw.githubusercontent.com/fernanda-berriosz/datos/main/datos.json");
+                            const data = await consulta.json();
+
+                           //Variables para género
+                            var females = [];
+                            var males = [];
+                            var cantFemale= 0;
+                            var cantMale = 0;
+                            var cantUnknown = 0;
+                            var all_genders = [];
+
+                            var contador = 0;
+
+
+                            //Variables para status
+                            var cantAlive = 0;
+                            var cantDead = 0;
+                            var cantUnknownStatus = 0;
+                            var all_status = [];
+
+                            //Variables para especies
+                            var cantHuman = 0;
+                            var cantAlien = 0;
+                            var all_species = [];
+
+                            //Variables para lugar de origen
+                            var cantEarthC137 = 0;
+                            var cantEarthReplacementDimension = 0;
+                            var cantAbadango = 0;
+                            var cantUnknownOriginName = 0;
+                            var all_originName = [];
+
+                            //Variables para locación
+                            var cantCitadelofRicks = 0;
+                            var cantEarthReplacementDimensionLocation = 0;
+                            var cantAbadangoLocation = 0;
+                            var cantTesticleMonsterDimension = 0;
+                            var cantWorldendersLair = 0;
+                            var cantAnatomyPark = 0;
+                            var cantUnknownLocationName = 0;
+                            var all_locationName = [];
+
+
+
+                            data.forEach(d => {
+                                if (d.gender=="Female"){
+                                   cantFemale++;
+                                    females.push(d.name); }
+                                    else if(d.gender=="Male"){
+                                    cantMale++;
+                                    }
+                                    else if(d.gender=="unknown"){
+                                    cantUnknown++;
+                                    }
+
+                                    if (d.status=="Alive"){
+                                       cantAlive++;
+                                     }
+                                    else if(d.status=="Dead"){
+                                    cantDead++;
+                                        }
+                                    else if(d.status=="unknown"){
+                                    cantUnknownStatus++;
+                                        }
+
+                                    if (d.species=="Human"){
+                                    cantHuman++;
+                                        }
+                                    else if(d.species=="Alien"){
+                                    cantAlien++;
+                                        }
+
+                                    if (d.origin_name=="Earth (C-137)"){
+                                    cantEarthC137++;
+                                        }
+                                    else if(d.origin_name=="Earth (Replacement Dimension)"){
+                                    cantEarthReplacementDimension++;
+                                        }
+                                    else if(d.origin_name=="Abadango"){
+                                    cantAbadango++;
+                                          }
+                                    else if(d.origin_name=="unknown"){
+                                    cantUnknownOriginName++;
+                                          }
+
+                                    if (d.location_name=="Citadel of Ricks"){
+                                    cantCitadelofRicks++;
+                                          }
+                                    else if(d.location_name=="Earth (Replacement Dimension)"){
+                                    cantEarthReplacementDimensionLocation++;
+                                          }
+                                    else if(d.location_name=="Abadango"){
+                                    cantAbadangoLocation++;
+                                          }
+                                    else if(d.location_name=="Testicle Monster Dimension"){
+                                    cantTesticleMonsterDimension++;
+                                          }
+                                    else if(d.location_name=="Worldender's lair"){
+                                    cantWorldendersLair++;
+                                          }
+                                    else if(d.location_name=="Anatomy Park"){
+                                    cantAnatomyPark++;
+                                          }
+                                    else if(d.location_name=="Desconocido"){
+                                    cantUnknownLocationName++;
+                                          }
+
+
+
+
+                            });
+            all_genders.push(cantFemale);
+            all_genders.push(cantMale);
+            all_genders.push(cantUnknown);
+
+            all_status.push(cantAlive);
+            all_status.push(cantDead);
+            all_status.push(cantUnknownStatus);
+
+            all_species.push(cantHuman);
+            all_species.push(cantAlien);
+
+            all_originName.push(cantEarthC137);
+            all_originName.push(cantEarthReplacementDimension);
+            all_originName.push(cantAbadango);
+            all_originName.push(cantUnknownOriginName);
+
+            all_locationName.push(cantCitadelofRicks);
+            all_locationName.push(cantEarthReplacementDimensionLocation);
+            all_locationName.push(cantAbadangoLocation);
+            all_locationName.push(cantTesticleMonsterDimension);
+            all_locationName.push(cantWorldendersLair);
+            all_locationName.push(cantUnknownLocationName);
+
+
+            console.log("Vivo o muerto "+ all_status)
+
+            console.log("Todos los generos "+ all_genders);
+
+            console.log("Todas las especies "+ all_species);
+
+            console.log("Todos los lugares de origen "+ all_originName);
+
+            console.log("Todos las locaciones "+ all_locationName);
+
+                                        /*
+                                GRAFICOS
+                            */
+                            new Chart(document.getElementById("gender").getContext("2d"), {
+                                type: "doughnut",
+                                data: {
+                                    labels: ["Femenino","Masculino","Desconocido"],
+                                    datasets: [
+                                    { data: all_genders, label: "", backgroundColor: ["#88FF10","#E7F81B","#19BAE0"] }
+                                    ],
+                                },
+                            });
+                            new Chart(document.getElementById("status").getContext("2d"), {
+                                type: "bar",
+                                data: {
+                                    labels: ["Vivo","Muerto","Desconocido"],
+                                    datasets: [
+                                    { data: all_status, label: "", backgroundColor: ["#88FF10","#E7F81B","#19BAE0"] }
+                                    ],
+                                },
+                            });
+                            new Chart(document.getElementById("species").getContext("2d"), {
+                                type: "bar",
+                                data: {
+                                    labels: ["Humano","Alien"],
+                                    datasets: [
+                                    { data: all_species, label: "", backgroundColor: ["#88FF10","#E7F81B","#19BAE0"] }
+                                    ],
+                                },
+                            });
+                            new Chart(document.getElementById("originName").getContext("2d"), {
+                                type: "doughnut",
+                                data: {
+                                    labels: ["Earth (C-137)","Earth (Replacement Dimension)","Abadango","Desconocido"],
+                                    datasets: [
+                                    { data: all_originName, label: "", backgroundColor: ["#88FF10","#E7F81B","#19BAE0","#FA7F01"] }
+                                    ],
+                                },
+                            });
+
+                            new Chart(document.getElementById("locationName").getContext("2d"), {
+                                type: "bar",
+                                data: {
+                                    labels: ["Citadel of Ricks","Earth (Replacement Dimension)","Abadango","Testicle Monster Dimension","Worldender's lair","Anatomy Park","Desconocido"],
+                                    datasets: [
+                                    { data: all_originName, label: "", backgroundColor: ["#88FF10","#E7F81B","#19BAE0","#FA7F01"] }
+                                    ],
+                                },
+                            });
+
+                        }
+                        todo().catch((error) => console.error(error));
+        </script>
+    </body>
+</html>
